@@ -1,0 +1,25 @@
+@extends('layout')
+     
+@section('content')
+    <div class="row">
+        <div class="col-lg-12 margin-tb">
+            <div class="pull-left">
+                <h2>Liste des {{model}}s</h2>
+            </div>
+            <div class="pull-right">
+                <a class="btn btn-success" href="{{ route('{{table_name}}.create') }}"> Nouveau {{model}}</a>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    @if ($message = Session::get('success'))
+        <div class="alert alert-success">
+            <p>{{ $message }}</p>
+        </div>
+    @endif
+     
+     {{indexViewContent}}
+    
+        
+@endsection
